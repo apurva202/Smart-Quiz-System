@@ -49,6 +49,11 @@
     resize: vertical;
 }
 
+.create-card .options-grid textarea {
+    min-height: 0;
+    resize: none;
+}
+
 .options-grid {
     display: grid;
     grid-template-columns: repeat(2,1fr);

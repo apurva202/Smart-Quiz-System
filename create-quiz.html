@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Quiz System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/create-quiz.css">
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+
+    <nav>
+        <div class="logo">Smart Quiz System</div>
+        <div class="nav-links">
+            <a>Dashboard</a>
+            <a class="active">Create Quiz</a>
+            <a>My Quizzes</a>
+            <a>History</a>
+        </div>
+    </nav>
+
+    <!-- CREATE QUIZ FORM -->
+
+    <div class="create-card">
+
+        <h1>Create New Quiz</h1>
+
+        <form id="create-quiz-form">
+
+            <label for="quiz-title"> <!-- quiz title -->
+                Quiz Title
+                <input id="quiz-title" type="text" placeholder="Enter quiz title...">
+            </label>
+
+            <label for="question"> <!-- question -->
+                Question
+                <textarea id="question" placeholder="Enter your question here..."></textarea>
+            </label>
+
+            <div class="options-grid"> <!-- options -->
+                <label for="option-a">
+                    Option A
+                    <input id="option-a" type="text" placeholder="Option A">
+                </label>
+
+                <label for="option-b">
+                    Option B
+                    <input id="option-b" type="text" placeholder="Option B">
+                </label>
+
+                <label for="option-c">
+                    Option C
+                    <input id="option-c" type="text" placeholder="Option C">
+                </label>
+
+                <label for="option-d">
+                    Option D
+                    <input id="option-d" type="text" placeholder="Option D">
+                </label>
+            </div>
+
+            <label for="correct-answer"> <!-- correct answer-->
+                Correct Answer
+                <select id="correct-answer" name="correctAnswer">
+                    <option value="">Select correct option</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </label>
+
+
+            <button type="button" id="add-Question-Btn">Add Question</button> <!-- Add  Question -->
+
+            <div class="added-question">
+                <div class="questions-added">
+                    Added Questions (<span id="question-Count">0</span>)
+                </div>
+                <div class="question-list">No questions added yet
+                    <!-- <div class="question-item">
+                        <span class="question-number">Q${}.</span>
+                        <span class="question-text">${}</span>
+                        <span class="question-answer">Ans: ${}</span>
+                        <img src="icons/delete.png" alt="delete">
+                    </div> -->
+                </div>
+            </div>
+
+            <label for="duration"> <!-- duration -->
+                Duration ( Minutes )
+                <input id="duration" type="number" min="1" max="180" placeholder="Enter quiz duration...">
+            </label>
+
+            <button type="submit" id="save-Quiz-Btn">Save Quiz</button> <!-- Save Quiz-->
+        </form>
+
+    </div>
+
+    <script src="js/create-quiz.js"></script>
+
+</body>
+
+</html>

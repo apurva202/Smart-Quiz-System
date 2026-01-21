@@ -1,0 +1,66 @@
+/* GLOBAL STYLES */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: #e1eff7;   
+}
+
+
+/* NAVIGATION BAR */
+
+nav {
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0 30px 0 30px;
+
+    height: 72px;
+    width: 98%;
+    
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    
+    background-color: #FBFEFF;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(80, 80, 80);
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.nav-links a:hover {
+    background-color: #e8f1ff;
+    color: #2563eb;
+}
+
+
+.nav-links a.active {
+    color: #2563eb;
+    font-weight: 700;
+}

@@ -1,0 +1,160 @@
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.quiz-container {
+    background: white;
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background-color: #eff6ff;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.question-count {
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.question-box h2 {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+    min-width: 0;
+    word-wrap: break-word   ;
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 1rem 1.2rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-card input[type="radio"] {
+    display: none;
+}
+
+.option-card:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.option-label {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    font-weight: 700;
+    min-width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 1rem;
+    transition: background 0.2s;
+}
+
+.option-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #374151;
+    min-width: 0;
+    word-wrap: break-word;
+}
+
+.option-card:has(input:checked) { 
+    border-color: #2563eb;
+    background-color: #eff6ff;
+}
+
+.option-card:has(input:checked) .option-label {
+    background-color: #3978ff;
+    color: white;
+}
+
+.quiz-footer {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.quiz-footer button {
+    background-color: #3b82f6;
+    color: white;
+    
+    border: none;
+    border-radius: 12px;
+    padding: 12px 0;
+
+    width: 130px;
+    text-align: center;
+    
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quiz-footer button:hover {
+    background-color: #2373f5;
+    border-color: #3b82f6;
+}
+
+.quiz-footer button:disabled {
+    background-color: #e5e7eb;
+    color: #9ca3af;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;    
+}   
+
+.quiz-footer .submit-btn {
+    background-color: #10b981;
+}
+
+.quiz-footer .submit-btn:hover {
+    background-color: #05ac75;
+}

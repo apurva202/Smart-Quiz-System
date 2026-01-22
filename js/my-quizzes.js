@@ -29,12 +29,20 @@ function updateList() {
                     <img src="icons/delete.png" alt="delete" class="delete-btn">
                 </div>`
 
+        quizCard.querySelector(".start-btn").addEventListener("click",() => {
+            startQuiz(i);
+        })
         quizCard.querySelector(".delete-btn").addEventListener("click",() => {
             deleteQuiz(i);
         })
 
         quiz_card_grid.append(quizCard);
     })
+}
+
+function startQuiz(index){
+    localStorage.setItem("currentQuizIndex", JSON.stringify(index));
+    window.location.href = "take-quiz.html"
 }
 
 function deleteQuiz(index) {

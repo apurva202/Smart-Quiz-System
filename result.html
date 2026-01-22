@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Quiz System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/result.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="result-card">
+
+            <header class="quiz-header">
+                <h1>Quiz Result</h1>
+            </header>
+
+            <div class="score-container">
+                <div class="score-circle">
+                    <span id="score-text">
+                    <span id="score">0</span> / <span id="total-score">0</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-box correct">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Correct</p>
+                    <span id="correct-count">0</span>
+                </div>
+
+                <div class="stat-box wrong">
+                    <i class="fa-solid fa-xmark"></i>
+                    <p>Wrong</p>
+                    <span id="wrong-count">0</span>
+                </div>
+
+                <div class="stat-box unattempted">
+                    <i class="fa-solid fa-minus"></i>
+                    <p>Skipped</p>
+                    <span id="unattempted-count">0</span>
+                </div>
+
+            </div>
+
+            <div class="quiz-footer">
+                <button id="home-btn" class="nav-btn">Go to Dashboard</button>
+                <button id="restart-btn" class="nav-btn submit-btn">Retry Quiz</button>
+            </div>
+
+        </div>
+            
+    </div>
+
+    <script src="js/result.js"></script>
+
+</body>
+
+</html>

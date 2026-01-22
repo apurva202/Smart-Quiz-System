@@ -27,17 +27,17 @@ const clearBtn = document.querySelector(".clear-btn");
 const nextBtn = document.querySelector(".next-btn");
 const submitBtn = document.querySelector(".submit-btn");
 
-previousBtn.addEventListener("click", previousQuestion);
-clearBtn.addEventListener("click", clearAnswer);
-nextBtn.addEventListener("click", nextQuestion);
-submitBtn.addEventListener("click", submitQuiz);
-
 let timeInterval;
 let timeLeft = currentQuiz.duration * 60;
 
 init()
 
 function init() {
+    
+    previousBtn.addEventListener("click", previousQuestion);
+    clearBtn.addEventListener("click", clearAnswer);
+    nextBtn.addEventListener("click", nextQuestion);
+    submitBtn.addEventListener("click", submitQuiz);
 
     allOptions.forEach(option => {
 
@@ -139,6 +139,7 @@ function submitQuiz() {
     const stats = getStats();
 
     const result = {
+        index: currentQuestionIndex,
         title: currentQuiz.title,
         totalQuestions: totalQuestions,
         score: stats.correct,

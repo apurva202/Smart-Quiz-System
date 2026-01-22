@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Quiz System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my-quizzes.css">
+</head>
+<body>
+    
+    <!-- NAV BAR -->
+
+    <nav>
+        <div class="logo">Smart Quiz System</div>
+        <div class="nav-links">
+            <a href="index.html">Dashboard</a>
+            <a href="create-quiz.html">Create Quiz</a>
+            <a class="active">My Quizzes</a>
+            <a href="history.html">History</a>
+        </div>
+    </nav>
+
+    <!-- QUIZ CARD GRID -->
+    <div class="container">
+
+        <h1>My Quizzes</h1>
+        
+        <div class="quiz-card-grid">  
+            <!-- <div class="quiz-card">
+                <div class="title">life at 115</div>
+                <div class="duration">duration : 180</div>
+                <div class="questions-created">
+                    <div class="questions">3 Questions</div>
+                    <div class="created">created : 1/21/2026, 11:13:37 PM</div>
+                </div>
+                <div class="buttons">
+                    <button class="start-btn">Start</button>
+                    <img src="icons/delete.png" alt="delete" class="delete-btn">
+                </div>
+            </div> -->
+            
+        </div>
+
+        <div class="empty-quiz-card">
+            <img src="icons/ghost.png" alt="ghost">
+            <h3>No Quizzes Found</h3>
+            <p>Click <strong>Create Quiz</strong> to get started.</p>
+        </div>
+
+    </div>
+
+    <script src="js/my-quizzes.js"></script>
+        
+    </body>
+    </html>

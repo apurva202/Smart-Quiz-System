@@ -140,4 +140,6 @@ function saveQuiz(e) {
 
     allQuestions = [];
     updateList();
+
+    window.location.replace("index.html")
 }

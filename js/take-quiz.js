@@ -139,7 +139,7 @@ function submitQuiz() {
     const stats = getStats();
 
     const result = {
-        index: currentQuestionIndex,
+        index: currentQuizIndex,
         title: currentQuiz.title,
         totalQuestions: totalQuestions,
         score: stats.correct,

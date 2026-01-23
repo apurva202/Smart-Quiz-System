@@ -155,3 +155,94 @@
     height: 38px;
 }
 
+#custom-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    font-family: system-ui;
+}
+
+.popup-card {
+    background: #ffffff;
+    padding: 1.1rem 2.5rem 2rem;
+    border-radius: 24px;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.popup-icon {
+    font-size: 2.5rem;
+    display: block;
+}
+
+#popup-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+}
+
+#popup-message {
+    font-size: 1.2rem;
+    color: #64748b;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    padding: 0 10px;
+}
+
+#popup-close-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+#popup-close-btn:active {
+    transform: scale(0.98);
+}
+
+.success .popup-icon {
+    color: #10b981;
+}
+
+.success #popup-close-btn {
+    background-color: #10b981;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2);
+}
+
+.error .popup-icon {
+    color: #f43f5e;
+}
+
+.error #popup-close-btn {
+    background-color: #f43f5e;
+    box-shadow: 0 4px 14px rgba(244, 63, 94, 0.2);
+}
+
+@keyframes popupEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.popup-card {
+    animation: popupEntrance 0.5s;
+}

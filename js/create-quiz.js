@@ -19,11 +19,17 @@ const duration = document.querySelector("#duration");
 const question_list = document.querySelector(".question-list");
 const question_count = document.querySelector("#question-Count");
 
+const container = document.querySelector("#custom-popup");
+const closeBtn = document.querySelector("#popup-close-btn");
+let submit = false;
+
 updateList();
 
 addBtn.addEventListener("click", addQuestion);
 
 createQuizForm.addEventListener("submit", saveQuiz);
+
+closeBtn.addEventListener("click", closePopUp);
 
 function addQuestion() {
     const q = question.value.trim();
@@ -34,7 +40,7 @@ function addQuestion() {
     const ca = correct.value.trim();
 
     if (!q || !a || !b || !c || !d || !ca) {
-        alert("Please Fill All Fields");
+        popUp("Missing Info","Please Fill All Fields of Question","error");
         return;
     }
 
@@ -103,29 +109,30 @@ function saveQuiz(e) {
     const quizList = JSON.parse(localStorage.getItem("quizList")) || [];
 
     if (allQuestions.length == 0) {
-        alert('At Least 1 Question Required');
+        popUp("Empty Quiz", "At least 1 question is required to save.", "error");
         return;
     }
 
     if (!t && !d) {
-        alert('Please Fill "Title" and "Duration"');
+        popUp("Missing Info", "Please fill both 'Title' and 'Duration'.", "error");
         return;
     }
 
     if (!d) {
-        alert('Please Fill "Duration"');
+        popUp("Missing Duration", "Please enter the quiz duration.", "error");
         return;
     }
 
     if (!t) {
-        alert('Please Fill "Title"');
+        popUp("Missing Title", "Please enter a title for your quiz.", "error");
         return;
     }
 
     let duplicate = quizList.some(quiz => quiz.title.toLowerCase() === t.toLowerCase())
 
     if (duplicate) {
-        alert("This Quiz Title Already Exists");
+        popUp("Duplicate Title", "This Quiz Title already exists.", "error");
+        window.scrollTo({top:0})
         return;
     }
 
@@ -141,5 +148,35 @@ function saveQuiz(e) {
     allQuestions = [];
     updateList();
 
-    window.location.replace("index.html")
+    submit = true;
+    popUp("Saved", "Your quiz has been saved successfully.","success")
+}
+
+function popUp(heading, message, type){
+
+    const icon = document.querySelector(".popup-icon");
+    const head = document.querySelector("#popup-title");
+    const msg = document.querySelector("#popup-message");
+
+    if (type === "success"){
+        icon.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
+    }
+    else {
+        icon.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>`;
+    }
+
+    head.innerText = heading;
+    msg.innerText = message;
+
+    container.className = type;
+    container.style.display = "flex";
+
+}
+
+function closePopUp() {
+    
+    container.style.display = "none";
+
+    if (submit) window.location.replace("index.html");
+
 }

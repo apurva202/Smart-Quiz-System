@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Quiz System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/history.css">
+</head>
+
+<body>
+
+    <!-- NAV BAR -->
+
+    <nav>
+        <div class="logo">Smart Quiz System</div>
+        <div class="nav-links">
+            <a href="index.html">Dashboard</a>
+            <a href="create-quiz.html">Create Quiz</a>
+            <a href="my-quizzes.html">My Quizzes</a>
+            <a class="active">History</a>
+        </div>
+    </nav>
+
+    <!-- HISTORY -->
+
+    <div class="history-page">
+
+        <div class="performance-header">
+            <h2>Performance History</h2>
+            <button id="clear-btn">Clear History</button>
+        </div>
+
+        <div class="data-card">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Quiz Name</th>
+                        <th>Score</th>
+                        <th>Percentage</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- <tr>
+                        <td class="title">
+                            Math Basics
+                        </td>
+                        <td>
+                            <div class="score Good">
+                                <span class="score-a">8</span>/<span class="score-t">10</span>
+                            </div>
+                        </td>
+                        <td class="percent Good">80%</td>
+                        <td>1/23/2026</td>
+                        <td>1:09:08 AM</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="empty-quiz-card">
+            <img src="icons/ghost.png" alt="ghost">
+            <h3>No Quiz History</h3>
+            <p>Click <strong>My Quizzes</strong> to get started.</p>
+        </div>
+
+    </div>
+
+    <script src="js/history.js"></script>
+
+</body>
+
+</html>

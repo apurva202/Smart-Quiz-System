@@ -1,0 +1,150 @@
+
+.dashboard-container {
+    font-family: sans-serif;
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.welcome-section h1 {
+    font-size: 2.2rem;
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.welcome-section p {
+    color: #64748b;
+    font-size: 1.3rem;
+    margin-bottom: 70px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.dashboard-grid a {
+    text-decoration: none;
+    padding: 40px 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-grid a:hover {
+    transform: scale(1.05);
+}
+
+.icon-box {
+    width: 65px;
+    height: 65px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.dashboard-grid h3 {
+    color: #1e293b;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.dashboard-grid p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 200px;
+}
+
+.create {
+    background-color: #d8ebfd;
+}
+
+.create h3 {
+    transition: color 0.3s ease;
+}
+
+.create .icon-box {
+    background-color: #b9d6fc;
+    color: #3d83f6;
+    transition: background 0.3s ease;
+}
+
+.create:hover {
+    background-color: #d0e5f8;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2); 
+}
+
+.create:hover h3 {
+    color: #2d70db;
+}
+
+.create:hover .icon-box {
+    background-color: #a4cafc;  
+}
+
+.my-quizzes {
+    background-color: #d6f1f3;
+}
+
+.my-quizzes h3 {
+    transition: color 0.3s ease;
+}
+
+.my-quizzes .icon-box {
+    background-color: #afe5dd;
+    color: #22a078;
+    transition: background 0.3s ease;
+}
+
+.my-quizzes:hover {
+    background-color: #cbeaec; 
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2); 
+}
+
+.my-quizzes:hover h3{
+    color: #198160;
+}
+
+.my-quizzes:hover .icon-box {
+    background-color: #a9dcd5;
+}
+
+.history {
+    background-color: #dfe6fd;
+}
+
+.history h3 {
+    transition: color 0.3s ease;
+}
+
+.history .icon-box {
+    background-color: #d4cafb;
+    color: #8b5cf6;
+    transition: background 0.3s ease;
+}
+
+.history:hover {
+    background-color: #d2dbf7;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2); 
+}
+
+.history:hover h3 {
+    color: #7e4eef;
+}
+
+.history:hover .icon-box {
+    background-color: #c5baf1;
+}

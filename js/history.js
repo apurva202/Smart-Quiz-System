@@ -10,6 +10,13 @@ const empty_quiz_card = document.querySelector(".empty-quiz-card");
 
 const clearBtn = document.querySelector("#clear-btn");
 
+const clearPopup = document.querySelector("#clear-popup");
+const cancelBtn = document.querySelector("#cancel-btn");
+const confirmBtn = document.querySelector("#confirm-btn");
+
+confirmBtn.addEventListener("click", confirmClear);
+cancelBtn.addEventListener("click", cancelClear);
+
 init();
 
 function init() {
@@ -60,12 +67,17 @@ function updateHistory() {
 }
 
 function clearHistory() {
+    clearPopup.style.display = "flex";
+}
 
+function confirmClear() {
+    clearPopup.style.display = "none";
     history.splice(0,history.length);
-
     localStorage.setItem("history",JSON.stringify(history));
-
     updateHistory();
+}
 
+function cancelClear() {
+    clearPopup.style.display = "none";
 }
 

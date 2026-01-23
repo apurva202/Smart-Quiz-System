@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/my-quizzes.css">
 </head>
+
 <body>
-    
+
     <!-- NAV BAR -->
 
     <nav>
@@ -26,8 +28,8 @@
     <div class="container">
 
         <h1>My Quizzes</h1>
-        
-        <div class="quiz-card-grid">  
+
+        <div class="quiz-card-grid">
             <!-- <div class="quiz-card">
                 <div class="title">life at 115</div>
                 <div class="duration">duration : 180</div>
@@ -40,7 +42,7 @@
                     <img src="icons/delete.png" alt="delete" class="delete-btn">
                 </div>
             </div> -->
-            
+
         </div>
 
         <div class="empty-quiz-card">
@@ -51,7 +53,25 @@
 
     </div>
 
+    <div id="delete-popup" style="display: none;">
+        <div class="popup-card">
+            <div class="popup-icon">
+                <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <h2 id="popup-title">Are you sure?</h2>
+            <div id="popup-message">
+                <p>Do you really want to delete this quiz?</p=>
+                <p>This action cannot be undone.</p>
+            </div>
+            <div class="popup-button">
+                <button type="button" id="cancel-btn">Cancel</button>
+                <button type="button" id="confirm-btn">Delete</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/my-quizzes.js"></script>
-        
-    </body>
-    </html>
+
+</body>
+
+</html>

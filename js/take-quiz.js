@@ -30,6 +30,13 @@ const submitBtn = document.querySelector(".submit-btn");
 let timeInterval;
 let timeLeft = currentQuiz.duration * 60;
 
+const submitPopup = document.querySelector("#submit-popup");
+const cancelBtn = document.querySelector("#cancel-btn");
+const confirmBtn = document.querySelector("#confirm-btn");
+
+confirmBtn.addEventListener("click", confirmSubmit);
+cancelBtn.addEventListener("click", cancelSubmit);
+
 init()
 
 function init() {
@@ -132,12 +139,38 @@ function updateTimer() {
 
 function submitQuiz() {
 
+    const icon = document.querySelector(".popup-icon");
+    const head = document.querySelector("#popup-title");
+    const msg = document.querySelector("#popup-message");
+
+    if (userAnswers.includes(null)) {
+        submitPopup.className = "incomplete";
+        icon.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i>`;
+        head.innerText = `Finish Anyway?`;
+        msg.innerHTML = `<p>You have <strong>unanswered questions</strong>.</p>
+        <p> Are you sure you want to submit now?</p>`;
+    }
+    else {
+        submitPopup.className = "complete";
+        icon.innerHTML = `<i class="fa-solid fa-paper-plane"></i>`;
+        head.innerText = `Submit Quiz?`;
+        msg.innerHTML = `<p> Are you ready to see your results?</p>`;
+    }
+
+    submitPopup.style.display = "flex";
+
+}
+
+function confirmSubmit() {
+
+    submitPopup.style.display = "none";
+
     clearInterval(timeInterval);
-
+    
     let history = JSON.parse(localStorage.getItem("history")) || [];
-
+    
     const stats = getStats();
-
+    
     const result = {
         index: currentQuizIndex,
         title: currentQuiz.title,
@@ -150,14 +183,19 @@ function submitQuiz() {
         date: new Date().toLocaleDateString(),
         time: new Date().toLocaleTimeString()
     }
-
+    
     history.push(result);
-
+    
     localStorage.setItem("history", JSON.stringify(history));
-
+    
     localStorage.setItem("currentQuizIndex", JSON.stringify());
-
+    
     window.location.replace("result.html");
+
+}
+
+function cancelSubmit() {
+    submitPopup.style.display = "none";
 }
 
 function getStats() {

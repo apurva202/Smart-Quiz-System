@@ -4,6 +4,15 @@ const quizList = JSON.parse(localStorage.getItem("quizList")) || [];
 const quiz_card_grid = document.querySelector(".quiz-card-grid");
 const empty_quiz_card = document.querySelector(".empty-quiz-card");
 
+const deletePopup = document.querySelector("#delete-popup");
+const cancelBtn = document.querySelector("#cancel-btn");
+const confirmBtn = document.querySelector("#confirm-btn");
+
+let indexToDelete = null;
+
+confirmBtn.addEventListener("click", confirmDelete);
+cancelBtn.addEventListener("click", cancelDelete);
+
 updateList();
 
 function updateList() {
@@ -46,9 +55,21 @@ function startQuiz(index){
 }
 
 function deleteQuiz(index) {
-    quizList.splice(index, 1);
+    deletePopup.style.display = "flex";
+    indexToDelete = index;
+}
+
+function confirmDelete() {
+    deletePopup.style.display = "none";
+    quizList.splice(indexToDelete, 1);
     updateLocalStorage();
     updateList();
+    indexToDelete = null;
+}
+
+function cancelDelete() {
+    deletePopup.style.display = "none";
+    indexToDelete = null;
 }
 
 function updateLocalStorage() {

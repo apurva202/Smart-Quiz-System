@@ -2,7 +2,7 @@
 
 const quizList = JSON.parse(localStorage.getItem("quizList"));
 
-const currentQuizIndex = localStorage.getItem("currentQuizIndex");
+const currentQuizIndex = parseInt(localStorage.getItem("currentQuizIndex"));
 if (currentQuizIndex === "undefined") window.location.replace("my-quizzes.html");
 
 const currentQuiz = quizList[currentQuizIndex];

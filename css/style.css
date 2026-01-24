@@ -66,3 +66,48 @@ nav {
     color: #2563eb;
     font-weight: 700;
 }
+
+@media (max-width: 768px) {
+    nav {
+        width: 95%;
+        padding: 0 20px;
+        height: auto;
+        min-height: 64px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        margin-top: 10px;
+        border-radius: 15px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+    }
+}

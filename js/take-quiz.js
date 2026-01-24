@@ -133,7 +133,7 @@ function updateTimer() {
 
     time.innerText = `${mintue} : ${second}`;
 
-    if (timeLeft === 0) submitQuiz();
+    if (timeLeft === 0) confirmSubmit();
 
 }
 

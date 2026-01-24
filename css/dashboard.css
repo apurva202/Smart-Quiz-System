@@ -148,3 +148,53 @@
 .history:hover .icon-box {
     background-color: #c5baf1;
 }
+
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .dashboard-grid a:last-child {
+        grid-column: span 2;
+        max-width: 500px;
+        justify-self: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        margin: 40px auto;
+    }
+
+    .welcome-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-section p {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 20px auto 0;
+    }
+
+    .dashboard-grid a:last-child {
+        grid-column: span 1;
+        max-width: 100%;
+    }
+
+    .dashboard-grid a {
+        padding: 30px 20px;
+    }
+
+    .dashboard-grid p {
+        max-width: 100%;
+    }
+}

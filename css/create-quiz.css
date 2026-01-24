@@ -1,6 +1,5 @@
-
 .create-card {
-    max-width: 650px;   
+    max-width: 650px;
     margin: 40px auto;
     padding: 32px 36px;
     background-color: #E9F5FE;
@@ -39,7 +38,7 @@
     border-radius: 12px;
     border: 1px solid #d1d5db;
     outline: none;
-    font-family: inherit;   
+    font-family: inherit;
     background-color: #ffffff;
 }
 
@@ -55,7 +54,7 @@
 
 .options-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
@@ -125,7 +124,7 @@
     font-size: 1.2rem;
     color: #111827;
     flex: 1;
-    min-width: 0; 
+    min-width: 0;
     word-wrap: break-word;
     word-spacing: 0.2rem;
 }
@@ -140,7 +139,7 @@
 }
 
 .question-item img {
-    background-color: #fee2e2;   
+    background-color: #fee2e2;
     padding: 6px;
     border-radius: 6px;
     cursor: pointer;
@@ -237,6 +236,7 @@
         opacity: 0;
         transform: scale(0.9) translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: scale(1) translateY(0);
@@ -245,4 +245,58 @@
 
 .popup-card {
     animation: popupEntrance 0.5s;
+}
+
+@media (max-width: 768px) {
+    .create-card {
+        margin: 20px 15px;
+        padding: 24px 20px;
+    }
+
+    .create-card h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .options-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .question-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        width: 100%;
+        align-items: start;
+    }
+
+    .question-text,
+    .question-answer,
+    .options-grid {
+        grid-column: 1;
+        width: 100%;
+    }
+
+    .question-item .delete-btn {
+        grid-column: 2;
+        grid-row: 1;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .create-card h1 {
+        font-size: 1.7rem;
+    }
+
+    .create-card label {
+        font-size: 1.1rem;
+    }
 }
